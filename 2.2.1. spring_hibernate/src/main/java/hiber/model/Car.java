@@ -8,13 +8,14 @@ import javax.persistence.*;
 @Table(name = "users_car")
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
     @Column(name = "model")
     private String model;
     @Column(name = "series")
     private int series;
     @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 
