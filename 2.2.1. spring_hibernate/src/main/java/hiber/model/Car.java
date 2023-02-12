@@ -8,14 +8,13 @@ import javax.persistence.*;
 @Table(name = "users_car")
 public class Car {
     @Id
-    @GeneratedValue
     private Long id;
     @Column(name = "model")
     private String model;
     @Column(name = "series")
     private int series;
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     private User user;
 
 
