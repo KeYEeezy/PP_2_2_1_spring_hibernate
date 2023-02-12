@@ -18,14 +18,14 @@ public class MainApp {
 
         UserService userService = context.getBean(UserService.class);
         CarService carService = context.getBean(CarService.class);
-        Car car1 =  new Car("Car1",1);
+        Car car1 = new Car("Car1", 1);
         User user1 = new User("User1", "Lastname1", "user1@mail.ru");
         car1.setUser(user1);
         userService.add(user1);
         carService.add(car1);
 
         User user2 = new User("User2", "Lastname2", "user2@mail.ru");
-        Car car2  = new Car("Car2", 2);
+        Car car2 = new Car("Car2", 2);
         car2.setUser(user2);
         userService.add(user2);
         carService.add(car2);
@@ -37,12 +37,10 @@ public class MainApp {
         carService.add(car3);
 
         User user4 = new User("User4", "Lastname4", "user4@mail.ru");
-        Car car4 =  new Car("Car4",4);
+        Car car4 = new Car("Car4", 4);
         car4.setUser(user4);
         userService.add(user4);
         carService.add(car4);
-
-
 
 
         List<User> users = userService.listUsers();
@@ -54,7 +52,7 @@ public class MainApp {
             System.out.println("*******");
         }
 
-        System.out.println(userService.getUser("Car4",4));
+        System.out.println(userService.getUser("Car4", 4));
 
         System.out.println(carService.getCar(user1));
 

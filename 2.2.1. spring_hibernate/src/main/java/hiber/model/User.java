@@ -19,10 +19,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-
-
-
-
     public User() {
     }
 
@@ -64,13 +60,6 @@ public class User {
         this.email = email;
     }
 
-//    public Car getCar() {
-//        return car;
-//    }
-//    public void setCar(Car car) {
-//        this.car = car;
-//        car.setUser(this);
-//    }
 
     @Override
     public String toString() {
@@ -79,7 +68,6 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-//                ", car=" + car +
                 '}';
     }
 }
