@@ -8,14 +8,16 @@ import javax.persistence.*;
 @Table(name = "users_car")
 public class Car {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private Long id;
     @Column(name = "model")
     private String model;
     @Column(name = "series")
     private int series;
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    private User user;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @MapsId
+//    private User user;
 
 
     public Car() {
@@ -50,13 +52,13 @@ public class Car {
         this.series = series;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     @Override
     public String toString() {

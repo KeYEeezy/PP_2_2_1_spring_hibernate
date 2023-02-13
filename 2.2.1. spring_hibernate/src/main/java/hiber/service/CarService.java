@@ -11,4 +11,6 @@ public interface CarService {
     List<Car> listCars();
 
     Car getCar(User user);
+    public Car getCarById (int id);
+    public void deleteCar(int id);
 }

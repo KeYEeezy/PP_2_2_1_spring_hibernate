@@ -40,5 +40,8 @@ public class UserServiceImp implements UserService {
       return userDao.getUser(model, series);
    }
 
+  public User getUserById(int id) {
+      return userDao.getUserById(id);
+  }
 
 }

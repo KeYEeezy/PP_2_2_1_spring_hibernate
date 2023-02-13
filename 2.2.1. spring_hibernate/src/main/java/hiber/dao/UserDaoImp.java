@@ -5,23 +5,27 @@ import hiber.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.TransactionManager;
 
 import javax.persistence.TypedQuery;
+import java.security.PublicKey;
 import java.util.List;
 
 @Repository
 public class UserDaoImp implements UserDao {
 
-
+    private TransactionManager transactionManager;
     private SessionFactory sessionFactory;
 
     @Autowired
     public UserDaoImp(SessionFactory factory) {
         this.sessionFactory = factory;
+
     }
 
     @Override
     public void add(User user) {
+
         sessionFactory.getCurrentSession().save(user);
     }
 
@@ -49,6 +53,10 @@ public class UserDaoImp implements UserDao {
         return sessionFactory.getCurrentSession().createQuery("from User").getResultList();
 
 
+    }
+
+    public User getUserById(int id) {
+        return sessionFactory.getCurrentSession().get(User.class,(long) id);
     }
 
 }

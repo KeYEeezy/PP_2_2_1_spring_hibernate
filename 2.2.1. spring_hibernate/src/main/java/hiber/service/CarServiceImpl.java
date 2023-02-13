@@ -40,4 +40,11 @@ public class CarServiceImpl implements CarService {
     public Car getCar(User user) {
         return carDao.getCar(user);
     }
+
+    public Car getCarById (int id) {
+        return carDao.getCarById(id);
+    }
+    public void deleteCar(int id) {
+        carDao.deleteCar(id);
+    }
 }

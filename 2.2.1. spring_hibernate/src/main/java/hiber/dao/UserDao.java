@@ -11,5 +11,7 @@ public interface UserDao {
 
    User getUser(String model, int series);
 
+   User getUserById(int id);
+
 
 }
